@@ -1,0 +1,14 @@
+FROM pytorch/pytorch:2.2.0-cuda12.1-cudnn8-devel AS build
+
+# Install build dependencies
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir \
+    build \
+    wheel \
+    setuptools
+
+COPY . /app
+WORKDIR /app
+    
+# # RUN python -m build --wheel --no-isolation
+# RUN python setup.py bdist_wheel --universal --dist-dir /app/dist

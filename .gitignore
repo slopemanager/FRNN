@@ -10,3 +10,4 @@ drill/
 dist/
 data/
 tests/output/
+dist
